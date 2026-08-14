@@ -18,9 +18,14 @@ description: 'soona is an all-in-one creative platform for ecommerce brands that
   photographers; generate on-brand content at scale with soona AI Studio; organize
   assets in a digital asset manager (DAM); and analyze listing performance and competitors
   with Listing Insights across Shopify, Amazon, Etsy, Walmart, Meta, and TikTok. soona
-  is headquartered in Denver, Colorado. This profile was surfaced as a portfolio company
-  of bain-capital-ventures, techstars, and union-square-ventures; enrichment found no
-  public developer API or documentation surface as of July 2026.'
+  is headquartered in Denver, Colorado, and acquired the generative-AI product photography
+  startup Mokker (Zerolens GmbH) in March 2024. This profile was surfaced as a portfolio
+  company of bain-capital-ventures, techstars, and union-square-ventures. Enrichment found
+  no public developer API, OpenAPI, SDK or developer portal on any soona-controlled host as
+  of August 2026: soona''s "integrations" with Shopify, Amazon, Google Drive, Dropbox and
+  Contentful are user-configured product connections rather than developer APIs. The only
+  API soona controls is the Mokker API, advertised at mokker.ai/api as "coming soon" behind
+  an early-access form, whose advertised host api.mokker.ai no longer resolves.'
 url: https://raw.githubusercontent.com/api-evangelist/soona/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -32,7 +37,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-13'
 tags:
 - Company
 - Commerce
@@ -51,12 +56,26 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/soona-domain-security.yml
 - type: Website
   url: https://soona.co/
 - type: Pricing
   url: https://soona.co/pricing
+- type: Plans
+  url: plans/soona-plans-pricing.yml
+- type: ChangeLog
+  url: changelog/soona-changelog.yml
+- type: LLMsTxt
+  url: llms/soona-llms.txt
 - type: Support
   url: https://support.soona.co/
+- type: HelpCenter
+  url: https://support.soona.co/
+- type: SignUp
+  url: https://book.soona.co/#/sign-up
+- type: Login
+  url: https://book.soona.co/#/sign-in
 - type: Blog
   url: https://soona.co/the-checkout
 - type: TermsOfService
@@ -64,7 +83,32 @@ common:
 - type: PrivacyPolicy
   url: https://soona.co/privacy-policy
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 0
+  artifacts_added: 4
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    soona itself publishes no developer API; the only API it controls is the Mokker API on
+    the mokker.ai property it acquired in March 2024, advertised at https://mokker.ai/api as
+    "coming soon" with a HubSpot early-access form standing in for any reference — and the
+    base URL it advertises, https://api.mokker.ai/v2/replace-background, is a dangling CNAME
+    whose AWS load-balancer target returns NXDOMAIN.
+  evidence:
+  - url: https://mokker.ai/api
+    status: 200
+  - url: https://share.hsforms.com/1mvFcnqArRyigfvk-ZCykAwe281q
+    status: 200
+  - url: https://api.mokker.ai/openapi.json
+    status: 0
+    note: DNS NXDOMAIN on the CNAME target; no HTTP response observed
+  - url: https://soona.co/openapi.json
+    status: 404
+  - url: https://book.soona.co/openapi.json
+    status: 404
+  - url: https://support.soona.co/integrations
+    status: 200
+    note: help-center integrations index; no API, API key or webhook documentation
+  checked: '2026-08-13'
