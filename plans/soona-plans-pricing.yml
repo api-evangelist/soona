@@ -1,0 +1,107 @@
+generated: '2026-08-13'
+method: searched
+source: https://soona.co/pricing
+currency: USD
+note: >-
+  soona sells a creative production service, not API capacity — the plans below meter
+  studio bookings, per-asset production, AI generation credits and asset storage. There is
+  no developer/API plan of any kind, and no plan grants API access. Prices captured
+  verbatim from the published pricing page.
+plan_count: 4
+plans:
+- name: Studio Pass
+  price: 149
+  currency: USD
+  billing_period: per-booking
+  type: one-time
+  sign_up: https://book.soona.co/#/book?account_creation_source=booking
+  included:
+  - platform access and live shoot attendance
+  - backdrops, lifestyle spaces, props and creative talent access
+  - 72-hour asset delivery
+  - limited AI tools
+  usage_pricing:
+  - item: photo
+    price: 39
+  - item: video clip
+    price: 93
+  - item: premium photo edit
+    price: 9
+- name: Basic Membership
+  price: 13
+  currency: USD
+  billing_period: month
+  billing_note: $13/month billed annually; monthly billing also offered
+  sign_up: https://book.soona.co/#/sign-up?open_subscription_checkout=tier-one
+  included:
+  - free studio pass
+  - 48-hour asset delivery
+  - basic AI tool access
+  - 200 GB digital storage
+  - basic background editing
+  usage_pricing:
+  - item: photo
+    price: 39
+  - item: video clip
+    price: 93
+  - item: premium photo edit
+    price: 9
+  limits:
+    storage_gb: 200
+- name: Standard Membership
+  price: 49
+  currency: USD
+  billing_period: month
+  billing_note: $49/month billed annually; monthly billing also offered
+  badge: best value
+  sign_up: https://book.soona.co/#/sign-up?open_subscription_checkout=tier-two
+  included:
+  - free studio pass
+  - free premium photo edits and video add-ons
+  - 24-hour asset delivery
+  - full AI tool access with unlimited generation credits
+  - 10% discount on models, styling and shoot upgrades
+  - 500 GB digital storage
+  - full background editing with shadows
+  - competitive analysis for up to 50 competitors
+  usage_pricing:
+  - item: photo
+    price: 39
+  - item: video clip
+    price: 93
+  limits:
+    storage_gb: 500
+    competitors_tracked: 50
+- name: Enterprise
+  price: null
+  currency: USD
+  billing_period: custom
+  contact: https://soona.co/contact-sales
+  included:
+  - everything in Standard Membership
+  - discounts on all services
+  - dedicated account management and creative team
+  - flexible payment options
+a_la_carte:
+- item: photo
+  price: 39
+- item: video clip
+  price: 93
+- item: premium photo edit
+  price: 9
+- item: video pro edit
+  price: 99
+- item: video add-on (music, graphics, text, crop)
+  price: 49
+- item: model
+  price_from: 79
+  price_to: 159
+  unit: hour
+- item: stylist
+  price: 149
+  unit: hour
+- item: UGC video
+  price_from: 89
+  unit: video
+free_tier: false
+api_plan: false

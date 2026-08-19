@@ -1,0 +1,68 @@
+generated: '2026-08-13'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts plus the soona-controlled application and mokker.ai hosts
+note: >-
+  The soona.co row was written by 0-working/probe-domain-security.py; the book.soona.co,
+  mokker.ai, app.mokker.ai and api.mokker.ai rows were probed by hand in the same pass
+  (curl HEAD + openssl s_client + dig), because the script only reads hosts named in
+  apis.yml and soona names no APIs. mokker.ai is a soona property, acquired with Zerolens
+  GmbH in March 2024.
+hosts:
+- host: soona.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  3 02:31:29 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: book.soona.co
+  https: true
+  tls_version: TLSv1.3
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  server: Heroku
+- host: mokker.ai
+  https: true
+  tls_version: TLSv1.3
+  hsts: true
+  hsts_max_age: 31536000
+  hsts_include_subdomains: false
+  server: Framer
+- host: app.mokker.ai
+  https: true
+  tls_version: TLSv1.3
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: false
+  server: Vercel
+  http_status: 307
+- host: api.mokker.ai
+  https: null
+  resolves: false
+  finding: dangling-cname
+  detail: >-
+    api.mokker.ai is a CNAME to
+    dualstack.mokker-us-west-2-prod-api-lb-1256808001.us-west-2.elb.amazonaws.com, which
+    answers NXDOMAIN — the AWS load balancer it points at no longer exists. This is the
+    exact host advertised as the API base on https://mokker.ai/api. A CNAME left pointing
+    at a deleted cloud resource is a standing subdomain-takeover exposure as well as a dead
+    API endpoint.
+domains:
+- domain: soona.co
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 a mx include:_spf.google.com include:sendgrid.net include:23618366.spf03.hubspotemail.net -all
+  dmarc: true
+  dmarc_policy: none
+- domain: mokker.ai
+  dnssec: false
+  caa: []
+  spf: false
+  dmarc: false
+  mx: true
+  finding: >-
+    mokker.ai accepts mail (Google Workspace MX) but publishes neither an SPF record nor a
+    DMARC record, so the domain is unprotected against spoofing. soona.co by contrast
+    publishes SPF with a -all hard fail, though its DMARC policy is p=none (monitor only,
+    no enforcement).

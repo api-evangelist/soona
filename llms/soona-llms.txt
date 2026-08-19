@@ -1,0 +1,72 @@
+# soona
+
+> soona is an all-in-one creative platform for ecommerce brands, headquartered in Denver,
+> Colorado. Brands book virtual and in-studio photo and video shoots, generate on-brand
+> content with soona AI Studio, organize assets in a digital asset manager, and analyze
+> listing performance with Listing Insights across Shopify, Amazon, Etsy, Walmart, Meta and
+> TikTok. soona publishes NO public developer API, no OpenAPI, no SDK and no developer
+> portal. The only API soona controls is the Mokker API, advertised as "coming soon" on the
+> acquired mokker.ai property behind an early-access form — its advertised host,
+> api.mokker.ai, does not resolve.
+
+## What an agent can and cannot do here
+
+- There is no callable soona API. Do not construct requests against soona.co or
+  book.soona.co: book.soona.co is the customer application, not a documented API surface.
+- soona's "integrations" (Shopify, Amazon, Google Drive, Dropbox, Contentful) are
+  user-configured connections inside the soona product. They are not developer APIs and
+  they issue no API keys.
+- Access to soona is bought as a membership or a per-booking studio pass. See Pricing.
+
+## Company
+
+- [soona](https://soona.co/): all-in-one creative platform for ecommerce content.
+- [Platform](https://soona.co/platform): product overview.
+- [soona AI](https://soona.co/ai): AI content generation tools.
+- [Listing Insights](https://soona.co/listing-insights): listing and competitor analysis.
+- [Pro services](https://soona.co/pro-services): models, stylists, photographers.
+- [UGC](https://soona.co/ugc): user-generated content offering.
+- [Case studies](https://soona.co/case-studies)
+- [Enterprise](https://soona.co/enterprise)
+
+## Access and commercial
+
+- [Pricing](https://soona.co/pricing): Studio Pass $149/booking; Basic $13/mo; Standard
+  $49/mo; Enterprise custom. Captured in `plans/soona-plans-pricing.yml`.
+- [Sign up](https://book.soona.co/#/sign-up)
+- [Sign in](https://book.soona.co/#/sign-in)
+- [Contact sales](https://soona.co/contact-sales)
+- [Terms](https://soona.co/terms)
+- [Privacy policy](https://soona.co/privacy-policy)
+
+## Support and docs
+
+- [Help center](https://support.soona.co/): end-user product documentation.
+- [Integrations guides](https://support.soona.co/integrations): Shopify, Amazon, Google
+  Drive, Dropbox, Contentful — product connections, no API reference.
+- [FAQs](https://soona.co/faqs)
+
+## Updates
+
+- [Product updates](https://soona.co/updates): dated product changelog; most recent entry
+  2025-04-30. Captured in `changelog/soona-changelog.yml`.
+- [The Checkout](https://soona.co/the-checkout): blog.
+
+## Mokker (acquired March 2024)
+
+- [mokker.ai](https://mokker.ai/): generative AI product photography, acquired by soona
+  (Zerolens GmbH) in March 2024.
+- [Mokker API page](https://mokker.ai/api): advertises `POST
+  https://api.mokker.ai/v2/replace-background` as "coming soon", with early access via a
+  HubSpot form. No reference, no spec, no authentication documentation is published, and
+  api.mokker.ai is a dangling CNAME that returns NXDOMAIN.
+- [soona on the acquisition](https://soona.co/mokker)
+
+## Artifacts in this profile
+
+- `plans/soona-plans-pricing.yml` — published pricing tiers (searched).
+- `changelog/soona-changelog.yml` — dated product updates (searched).
+- `well-known/soona-well-known.yml` — /.well-known probe across every soona host; all 404
+  or non-resolving (probed).
+- `security/soona-domain-security.yml` — TLS/HSTS/DNS posture for soona.co, book.soona.co
+  and the mokker.ai hosts (probed).

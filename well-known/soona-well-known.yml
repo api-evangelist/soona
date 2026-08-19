@@ -1,0 +1,123 @@
+generated: '2026-08-13'
+method: probed
+source: live GET probes of every soona-controlled host
+note: >-
+  Every /.well-known/ path probed on every host soona controls returned 404 or did not
+  resolve. No WellKnown or SecurityTxt pointer is emitted in apis.yml, because no path
+  returned a document — a recorded absence, not a served surface. soona.co is a Webflow
+  marketing site that answers "Invalid .well-known request" (404) for the entire
+  /.well-known/ namespace; book.soona.co is the Heroku-hosted booking/DAM application;
+  mokker.ai and app.mokker.ai are the Mokker AI property soona acquired in March 2024.
+hosts:
+- host: https://soona.co
+  role: marketing website (Webflow)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://book.soona.co
+  role: booking + digital asset management application (Heroku)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /graphql
+    status: 404
+- host: https://support.soona.co
+  role: help center
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://mokker.ai
+  role: acquired Mokker AI marketing site (Framer)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://app.mokker.ai
+  role: acquired Mokker AI application (Vercel)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://api.mokker.ai
+  role: >-
+    the API host advertised on https://mokker.ai/api — DID NOT RESOLVE. api.mokker.ai is a
+    CNAME to dualstack.mokker-us-west-2-prod-api-lb-1256808001.us-west-2.elb.amazonaws.com,
+    which returns NXDOMAIN. No HTTP status could be observed; every probe failed at DNS.
+  documents:
+  - path: /
+    status: null
+    error: dns-nxdomain-on-cname-target
+  - path: /openapi.json
+    status: null
+    error: dns-nxdomain-on-cname-target
+  - path: /v2/replace-background
+    status: null
+    error: dns-nxdomain-on-cname-target

@@ -1,0 +1,57 @@
+generated: '2026-08-13'
+method: searched
+source: https://soona.co/updates
+scheme: dated-product-updates
+note: >-
+  soona publishes dated product updates at https://soona.co/updates, one page per entry at
+  https://soona.co/update/<slug>. This is a product changelog for the end-user application,
+  not an API changelog — no version numbers, no breaking-change notices, no deprecation
+  notes, because soona publishes no API. The most recent entry captured is dated
+  2025-04-30, so the public update stream has been dormant for roughly sixteen months as of
+  this pass. Entries below are the recent window shown on the index, not the full history.
+current_version: null
+entries:
+- title: New Brand Standards Feature
+  date: '2025-04-30'
+  category: product update
+  url: https://soona.co/update/new-brand-standards-feature
+  breaking: false
+  highlights:
+  - upload logo, fonts and colors as brand standards
+- title: Elevated Live Shoot Experience
+  date: '2025-04-03'
+  category: product update
+  url: https://soona.co/update/elevated-live-shoot-experience
+  breaking: false
+  highlights:
+  - redesigned live shoot experience
+- title: New Integrations with Google Drive, Dropbox and Contentful
+  date: '2025-03-19'
+  category: product update
+  url: https://soona.co/update/new-integrations-with-google-drive-dropbox-and-contentful
+  breaking: false
+  highlights:
+  - asset delivery integrations for Google Drive, Dropbox and Contentful
+  - user-configured connections in the product, not developer APIs
+- title: Introducing Pinned Notes on Images
+  date: '2025-01-28'
+  category: product update
+  url: https://soona.co/update/introducing-pinned-notes-on-images
+  breaking: false
+- title: 'New Bulk Tools: Resize, Crop & Remove Backgrounds at Scale'
+  date: '2025-01-07'
+  category: product update
+  url: https://soona.co/update/new-bulk-tools-resize-crop-remove-backgrounds-at-scale
+  breaking: false
+- title: A Powerful New Gallery
+  date: '2024-11-22'
+  category: product update
+  url: https://soona.co/update/a-powerful-new-gallery
+  breaking: false
+- title: UGC Pricing Adjustment
+  date: '2024-05-30'
+  category: company news
+  url: https://soona.co/update/ugc-pricing-adjustment
+  breaking: false
+  highlights:
+  - price increase on Trend, soona's UGC offering
