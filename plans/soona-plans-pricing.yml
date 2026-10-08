@@ -105,3 +105,35 @@ a_la_carte:
   unit: video
 free_tier: false
 api_plan: false
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - one-time
+  - subscription
+  units: []
+  plans:
+  - name: Studio Pass
+    access: other
+    model: one-time
+    model_how: stated
+    units: []
+    periods: []
+  - name: Basic Membership
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Standard Membership
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
